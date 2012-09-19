@@ -22,7 +22,5 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #++
-
-module EMRugged
-  VERSION = "0.1.1"
-end
+require "em_rugged/version"
+require "em_rugged/repository"
