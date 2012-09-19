@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.join("lib/em_rugged/version")
+require File.join(File.dirname(__FILE__), "lib/em_rugged/version")
 
 Gem::Specification.new do |s|
   s.name        = "em_rugged"
@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.description = %q{A wrapper around the Rugged API that returns deferrables for all the costly operations.}
 
   s.add_dependency "eventmachine", "~>1.0"
-  s.add_dependency "rugged", "~>0"
+  s.add_dependency "rugged", "~>0.17"
 
   s.add_development_dependency "minitest", "~> 2.0"
   s.add_development_dependency "em-minitest-spec", "~> 1.1"
