@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.description = %q{A wrapper around the Rugged API that returns deferrables for all the costly operations.}
 
   s.add_dependency "eventmachine", "~>1.0"
-  s.add_dependency "rugged", "~>0.17"
+  s.add_dependency "rugged", "0.17.0.b6"
 
   s.add_development_dependency "minitest", "~> 2.0"
   s.add_development_dependency "em-minitest-spec", "~> 1.1"
