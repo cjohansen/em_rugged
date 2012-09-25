@@ -38,5 +38,6 @@ module EMRugged
     end
 
     defer :rev_parse
+    defer :refs
   end
 end

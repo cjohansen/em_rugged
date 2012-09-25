@@ -53,4 +53,21 @@ describe EMRugged::Repository do
       wait!
     end
   end
+
+  describe "#refs" do
+    it "returns deferrable" do
+      deferrable = EMRugged::Repository.new(".").refs
+      assert deferrable.respond_to?(:callback)
+      assert deferrable.respond_to?(:errback)
+    end
+
+    it "yields array" do
+      deferrable = EMRugged::Repository.new(".").refs
+      deferrable.callback do |tree|
+        assert Array === tree
+        done!
+      end
+      wait!
+    end
+  end
 end
