@@ -22,24 +22,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #++
-require "rugged"
-require "em_rugged/deferrable"
-require "em_rugged/delegator"
 
 module EMRugged
-  class Repository
-    extend EMRugged::Deferrable
-    extend EMRugged::Delegator
-
-    def initialize(root)
-      @repo = Rugged::Repository.new(root)
+  module Delegator
+    def delegate(method)
+      define_method(method) do |*args|
+        subject.send(method, *args)
+      end
     end
-
-    def subject; @repo end
-
-    delegate :bare?
-    defer :rev_parse
-    defer :refs
-    defer :lookup
   end
 end

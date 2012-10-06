@@ -70,4 +70,11 @@ describe EMRugged::Repository do
       wait!
     end
   end
+
+  describe "#bare?" do
+    it "delegates to subject" do
+      repo = EMRugged::Repository.new(".")
+      assert !repo.bare?
+    end
+  end
 end
