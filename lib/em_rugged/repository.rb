@@ -38,6 +38,7 @@ module EMRugged
     def subject; @repo end
 
     delegate :bare?
+    delegate :path
     defer :rev_parse
     defer :refs
     defer :lookup
