@@ -54,6 +54,14 @@ describe EMRugged::Repository do
     end
   end
 
+  describe "#rev_parse_oid_sync" do
+    it "returns ref" do
+      expected = "b170eb4da91d95a08d07df3f76b2dab198e203f0"
+      repo = EMRugged::Repository.new(".")
+      assert_equal expected, repo.rev_parse_oid_sync("v0.1.2")
+    end
+  end
+
   describe "#refs" do
     it "returns deferrable" do
       deferrable = EMRugged::Repository.new(".").refs

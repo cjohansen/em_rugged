@@ -25,9 +25,10 @@
 
 module EMRugged
   module Delegator
-    def delegate(method)
+    def delegate(method, target = nil)
+      target ||= method
       define_method(method) do |*args|
-        subject.send(method, *args)
+        subject.send(target, *args)
       end
     end
   end

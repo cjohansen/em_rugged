@@ -39,6 +39,7 @@ module EMRugged
 
     delegate :bare?
     delegate :path
+    delegate :rev_parse_oid_sync, :rev_parse_oid
     defer :rev_parse
     defer :refs
     defer :lookup
