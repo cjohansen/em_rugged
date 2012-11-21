@@ -1,5 +1,9 @@
 # EMRugged
 
+<a href="http://travis-ci.org/cjohansen/em_rugged" class="travis">
+  <img src="https://secure.travis-ci.org/cjohansen/em_rugged.png">
+</a>
+
 Asynchronous [`Rugged`](https://github.com/libgit2/rugged) for EventMachine.
 Provides an API exactly like that of Rugged's, only where costly operations are
 asynchronous and return deferrables.
